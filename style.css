@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+.principal-content {
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    
+}
+#title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#inputcep {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.botao {
+
+}
+#resultado {
+    margin-top: 20px;
+}
+.erro {
+    color: red;
+}

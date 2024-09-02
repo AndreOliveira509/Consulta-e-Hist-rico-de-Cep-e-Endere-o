@@ -3,27 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Consulta de CEP</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        #resultado {
-            margin-top: 20px;
-        }
-        .erro {
-            color: red;
-        }
-    </style>
 </head>
 <body>
-    <h1>Consulta de CEP</h1>
-    <label for="cep">Digite o CEP:</label>
-    <input type="text" id="cep" maxlength="8" placeholder="Ex: 01001000">
-    <button onclick="buscarEndereco()">Buscar Endereço</button>
-    <div id="resultado"></div>
+    <div class="principal-content">
+        <h1 id="title">
+            Consulta de CEP
+        </h1>
+        <div class="inputcep">
+            <label for="cep">
+                Digite o CEP:
+            </label>
+            <input type="text" id="cep" maxlength="8" placeholder="Ex: 01001000">
+        </div>
+        <button onclick="buscarEndereco()" class="botao">
+            Buscar Endereço
+        </button>
+        <div id="resultado">
+
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
-</html>
 
