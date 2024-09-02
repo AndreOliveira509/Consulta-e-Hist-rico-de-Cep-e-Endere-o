@@ -1,11 +1,22 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 .principal-content {
-    height: 30vh;
+    height: 50vh;
+    width: 50vw;
     display: flex;
     align-items: center;
+    border: 1px solid black;
     justify-content: space-around;
     flex-direction: column;
     
@@ -15,14 +26,37 @@ body {
     align-items: center;
     justify-content: center;
 }
-#inputcep {
+.inputsetup {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
+    
+    width: 400px;
 }
-.botao {
+.inputsetup label{
+    font-size: 1.1em;
+}
+.inputsetup input {
+    width: 250px;
+    height: 30px;
+    font-size: 1.1em;
+    border: 1px solid black;
+}
 
+.botao {
+    background-color: #353535;
+    border: 2px solid black;
+    color: #FFF;
+    width: 250px;
+    height: 60px;
+    border-radius: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.botao a:hover{
+    text-decoration: underline;
+    color: #ccc
 }
 #resultado {
     margin-top: 20px;
