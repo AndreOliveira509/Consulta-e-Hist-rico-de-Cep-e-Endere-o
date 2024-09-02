@@ -1,29 +1,61 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulta de CEP</title>
+    <title>Consulta de Endereço por CEP ou Endereço</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        #resultado {
-            margin-top: 20px;
-        }
         .erro {
             color: red;
+        }
+        .historico {
+            margin-top: 20px;
+        }
+        .historico button {
+            display: block;
+            margin: 5px 0;
         }
     </style>
 </head>
 <body>
-    <h1>Consulta de CEP</h1>
-    <label for="cep">Digite o CEP:</label>
-    <input type="text" id="cep" maxlength="8" placeholder="Ex: 01001000">
+    <h1>Consulta de Endereço por CEP ou Endereço</h1>
+
+    <!-- Campo de entrada para o CEP -->
+    <input type="text" id="cep" placeholder="Digite o CEP (apenas números)" maxlength="8">
     <button onclick="buscarEndereco()">Buscar Endereço</button>
+
+    <h2>Ou buscar CEP pelo Endereço</h2>
+
+    <!-- Campos de entrada para busca por endereço -->
+    <select id="uf">
+        <option value="">Selecione o UF</option>
+        <option value="SP">SP</option>
+        <option value="RJ">RJ</option>
+        <option value="MG">MG</option>
+        <!-- Adicione mais estados conforme necessário -->
+    </select>
+    <input type="text" id="cidade" placeholder="Cidade">
+    <input type="text" id="logradouro" placeholder="Logradouro">
+    <button onclick="buscarCepPorEndereco()">Buscar CEP</button>
+
+    <!-- Exibição de resultado -->
     <div id="resultado"></div>
+    <br><br>
+    <!-- Inputs para exibir os dados retornados -->
+    <input type="text" id="cep-info" placeholder="CEP" readonly>
+    <input type="text" id="logradouro-info" placeholder="Logradouro" readonly>
+    <input type="text" id="bairro-info" placeholder="Bairro" readonly>
+    <input type="text" id="cidade-info" placeholder="Cidade" readonly>
+    <input type="text" id="uf-info" placeholder="Estado (UF)" readonly>
+    <br>
+    <button onclick="limparCampos()">Limpar</button>
+
+    <!-- Histórico de pesquisas -->
+    <div class="historico" id="historico">
+        <h2>Histórico de Pesquisas</h2>
+        <!-- Histórico será preenchido dinamicamente -->
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
-
