@@ -7,60 +7,128 @@ body {
     font-family: Arial, sans-serif;
     background-color: #fff;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;  
 
 }
-.principal-content {
-    height: 50vh;
-    width: 50vw;
+#principal-content {
+
+    height: 80vh;
+    width: 70vw;
     display: flex;
-    align-items: center;
-    border: 1px solid black;
-    justify-content: space-around;
-    flex-direction: column;
-    
-}
-#title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.inputsetup {
-    display: flex;
-    align-items: center;
     justify-content: space-between;
-    flex-direction: column;
+    flex-wrap: wrap;    
+}
+#title-area {
+    width: 100vw;
+    height: 10vh;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin-bottom: 60px;
     
-    width: 400px;
 }
-.inputsetup label{
-    font-size: 1.1em;
+.inputsetup button{
+    width: 100px;
+    height: 40px;
+    margin-top: 20px;
 }
-.inputsetup input {
+.inputsetup select{
+    width: 80px;
+    height: 30px;
+    border: 1px solid black;
+}
+.inputsetup input{
     width: 250px;
     height: 30px;
     font-size: 1.1em;
     border: 1px solid black;
 }
-
-.botao {
-    background-color: #353535;
-    border: 2px solid black;
-    color: #FFF;
-    width: 250px;
-    height: 60px;
-    border-radius: 15px;
+.inputsetup label{
     font-size: 1.1em;
-    font-weight: bold;
 }
-.botao a:hover{
-    text-decoration: underline;
-    color: #ccc
+#cep-content{
+    display: flex;
+    justify-content: center;
+    width: 49%;
+    height: 70%;
+}
+#cep-content h1, h3{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#cep-content .divcep{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 10px;
+}
+#cep-content .divres{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+#cep-content .divresinput {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 60%;
+    width: 100%;
+}
+#cep-content .divresinput input, label{
+    margin-top: 10px;
+}
+#end-content{
+    display: flex;
+    justify-content: center;
+    width: 49%;
+    height: 70%;
+}
+#end-content h1, h3{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+#end-content .divend{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+#end-content .divend input, select, label{
+    margin-top: 10px;
+}
+#end-content .divresend{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+#his-content{
+    display: flex;
+    width: 100%;
+    height: 30%;    
 }
 #resultado {
     margin-top: 20px;
 }
 .erro {
-    color: red;
+    color: red;
 }

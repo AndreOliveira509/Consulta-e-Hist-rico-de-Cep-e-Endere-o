@@ -18,46 +18,92 @@
 </head>
 
  <body>
-    <div id="principal-content"></div>
-    <h1>Consulta de Endereço por CEP ou Endereço</h1>
+     <div id="title-area">
+         <h1>
+             GeoCEP
+         </h1>
+     </div>
+    <div id="principal-content">
+        <div id="cep-content">
+            <div class="inputsetup">
+                <h1>
+                    Consulta por CEP
+                </h1>
+                
+                <h3>
+                    Veja seu endereço através do seu CEP
+                </h3>
+                <!-- Campo de entrada para o CEP -->
+                <div class="divcep">
+                    <div>
+                        <label for="cep">Digite seu CEP:  </label>
+                        <input type="text" id="cep" placeholder="Digite o CEP (apenas números)" maxlength="8">
+                    </div>
+                        <button onclick="buscarEndereco()">
+                        Buscar
+                    </button>
+                </div>
+                <div class="divres">
+                    <h2>Resultados</h2>
+                    <div class="divresinput">
+                        <input type="text" id="cep-info" placeholder=" CEP" readonly>
+                        <input type="text" id="logradouro-info" placeholder=" Logradouro" readonly>
+                        <input type="text" id="bairro-info" placeholder=" Bairro" readonly>
+                        <input type="text" id="cidade-info" placeholder=" Cidade" readonly>
+                        <input type="text" id="uf-info" placeholder=" Estado (UF)" readonly>
+                    </div>
+                    <button onclick="limparCampos()">Limpar</button>
+                </div>
+            </div>
+        </div>
+        <div id="end-content">
+            <div class="inputsetup">
+                        <h1>Buscar CEP pelo Endereço</h1>
+                        <h3>
+                            Veja seu CEP através do seu Endereço
+                        </h3>
 
-    <!-- Campo de entrada para o CEP -->
-    <input type="text" id="cep" placeholder="Digite o CEP (apenas números)" maxlength="8">
-    <button onclick="buscarEndereco()">Buscar Endereço</button>
-
-    <h2>Ou buscar CEP pelo Endereço</h2>
-
-    <!-- Campos de entrada para busca por endereço -->
-    <select id="uf">
-        <option value="">Selecione o UF</option>
-        <option value="SP">SP</option>
-        <option value="RJ">RJ</option>
-        <option value="MG">MG</option>
-        <!-- Adicione mais estados conforme necessário -->
-    </select>
-    <input type="text" id="cidade" placeholder="Cidade">
-    <input type="text" id="logradouro" placeholder="Logradouro">
-    <button onclick="buscarCepPorEndereco()">Buscar CEP</button>
-
-    <!-- Exibição de resultado -->
-    <div id="resultado"></div>
-    <br><br>
-    <!-- Inputs para exibir os dados retornados -->
-    <input type="text" id="cep-info" placeholder="CEP" readonly>
-    <input type="text" id="logradouro-info" placeholder="Logradouro" readonly>
-    <input type="text" id="bairro-info" placeholder="Bairro" readonly>
-    <input type="text" id="cidade-info" placeholder="Cidade" readonly>
-    <input type="text" id="uf-info" placeholder="Estado (UF)" readonly>
-    <br>
-    <button onclick="limparCampos()">Limpar</button>
-
-    <!-- Histórico de pesquisas -->
-    <div class="historico" id="historico">
-        <h2>Histórico de Pesquisas</h2>
-        <!-- Histórico será preenchido dinamicamente -->
+                <!-- Campos de entrada para busca por endereço -->
+                <div class="divend">
+                    <label for="cidade">
+                        Digite sua Cidade:
+                    </label>
+                    <select id="uf">
+                        <option value="">Selecione o UF</option>
+                        <option value="SP">SP</option>
+                        <option value="RJ">RJ</option>
+                        <option value="MG">MG</option>
+                        <!-- Adicione mais estados conforme necessário -->
+                    </select>
+                    <label for="cidade">
+                        Digite sua Cidade:
+                    </label>
+                    <input type="text" id="cidade" placeholder="Cidade">
+                    <label for="logradouro">
+                        Digite seu logradouro:
+                    </label>
+                    <input type="text" id="logradouro" placeholder="Logradouro">
+                    <button onclick="buscarCepPorEndereco()">Buscar CEP</button>
+                </div>
+                <!-- Exibição de resultado -->
+                <div class="divresend">
+                    <div id="resultado"></div>
+                    <!-- Inputs para exibir os dados retornados -->
+                    <h2>Resultados</h2>
+                    <input type="text" id="cep" placeholder="CEP" maxlength="8" readonly>
+                    <button onclick="limparCampos()">Limpar</button>
+                </div>
+            </div>
+        </div>
+        <div id="his-content">
+        <!-- Histórico de pesquisas -->
+            <div class="historico" id="historico">
+                <h2>Histórico de Pesquisas</h2>
+                <!-- Histórico será preenchido dinamicamente -->
+            </div>
+        </div>
+            <script src="script.js"></script>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
 
