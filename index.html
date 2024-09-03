@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulta de Endereço por CEP ou Endereço</title>
-    <style>
-        .erro {
+    <link rel="stylesheet" href="style.css">
+        <!-- /* .erro {
             color: red;
         }
         .historico {
@@ -14,10 +14,10 @@
         .historico button {
             display: block;
             margin: 5px 0;
-        }
-    </style>
+        } */ -->
 </head>
-<body>
+
+ <body>
     <h1>Consulta de Endereço por CEP ou Endereço</h1>
 
     <!-- Campo de entrada para o CEP -->
@@ -59,3 +59,49 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+<!-- <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Consulta de CEP</title>
+</head>
+<body>
+    <div class="principal-content">
+        <h1 id="title">
+            Consulta de CEP
+        </h1>
+        <div class="inputsetup">
+            <label for="cep">
+                Digite o CEP:
+            </label>
+            <input type="text" id="cep" maxlength="8" placeholder="Ex: 01001000">
+            <label for="estado">
+                Digite seu Estado:
+            </label>
+            <input type="text" id="estado" placeholder="Ex: São Paulo">
+            <label for="bairro">
+                Bairro:
+            </label>
+            <input type="text" id="bairro" placeholder="Ex: Liberdade">
+            <label for="cidade">
+                Digite sua Cidade:
+            </label>
+            <input type="text" id="Cidade" placeholder="Ex: São Paulo">
+            <label for="logradouro">
+                Digite seu Logradouro:
+            </label>
+            <input type="text" id="logradouro" placeholder="Ex: Av Paulista">
+
+        </div>
+        <button onclick="buscarEndereco()" class="botao">
+            <a>Buscar Endereço </a>
+        </button>
+        <div id="resultado">
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body> -->
