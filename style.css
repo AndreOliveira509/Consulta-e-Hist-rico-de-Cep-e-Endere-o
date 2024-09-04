@@ -32,7 +32,7 @@ body {
     font-size: 1.1em;
     font-weight: 300;
     font-style: normal;
-    border-radius: 30px 30px 0px 0px;
+    border-radius: 20px 20px 0px 0px;
     
 }
 #title-area div{
@@ -54,7 +54,7 @@ body {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;  
-    border-radius: 0px 0px 30px 30px;
+    border-radius: 0px 0px 20px 20px;
 }
 .inputsetup button{
     width: 120px;
@@ -158,6 +158,8 @@ body {
     position: absolute;
     left: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 30vw;
     height: 99vh;
     background-color: #fff;
