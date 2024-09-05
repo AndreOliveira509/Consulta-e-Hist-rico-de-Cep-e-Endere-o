@@ -95,10 +95,10 @@
                         </div>
                         <!-- Exibição de resultado -->
                         <div class="divresend">
-                            <div id="resultado2"></div>
+                            <div id="resultado"></div>
                             <!-- Inputs para exibir os dados retornados -->
                             <h2>Resultados</h2>
-                            <input type="text" id="cep3" placeholder="CEP" maxlength="9" readonly>
+                            <input type="text" id="cep" placeholder="CEP" maxlength="8" readonly>
                             <button onclick="limparCampos()">Limpar</button>
                         </div>
                     </div>
@@ -106,56 +106,13 @@
                 <script src="script.js"></script>
             </div>
             <div id="his-content">
-                <div class="historico" id="historico">
+                <div class="titlehis">
                     <h2>Histórico de Pesquisas</h2>
+                </div>
+                <div class="historico" id="historico">
+
                 </div>
             </div>
         </div>
 </body>
 </html>
-
-<!-- <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Consulta de CEP</title>
-</head>
-<body>
-    <div class="principal-content">
-        <h1 id="title">
-            Consulta de CEP
-        </h1>
-        <div class="inputsetup">
-            <label for="cep">
-                Digite o CEP:
-            </label>
-            <input type="text" id="cep" maxlength="8" placeholder="Ex: 01001000">
-            <label for="estado">
-                Digite seu Estado:
-            </label>
-            <input type="text" id="estado" placeholder="Ex: São Paulo">
-            <label for="bairro">
-                Bairro:
-            </label>
-            <input type="text" id="bairro" placeholder="Ex: Liberdade">
-            <label for="cidade">
-                Digite sua Cidade:
-            </label>
-            <input type="text" id="Cidade" placeholder="Ex: São Paulo">
-            <label for="logradouro">
-                Digite seu Logradouro:
-            </label>
-            <input type="text" id="logradouro" placeholder="Ex: Av Paulista">
-
-        </div>
-        <button onclick="buscarEndereco()" class="botao">
-            <a>Buscar Endereço </a>
-        </button>
-        <div id="resultado">
-
-        </div>
-    </div>
-    <script src="script.js"></script>
-</body> -->
