@@ -21,7 +21,7 @@
                         <img src="icons/local.png">
                     </h1>
                 </div>
-                <a href="#">
+                <a href="#" onclick="m()">
                     <img src="icons/historia.png">
                 </a>
             </div>
@@ -34,7 +34,7 @@
                     <div class="divcep">
                         <div>
                             <label for="cep">Digite seu CEP: </label>
-                            <input type="text" id="cep" placeholder="Digite o CEP (apenas números)" maxlength="8">
+                            <input type="text" id="cep" placeholder="Digite o CEP (apenas números)" maxlength="9">
                         </div>
                         <button onclick="buscarEndereco()">Buscar</button>
                     </div>
@@ -75,10 +75,14 @@
         </div>
         <div id="his-content">
             <div class="titlehis">
+                <a href="#" onclick="fecharm()">
+                    <img src="icons/botao-voltar.png">
+                </a>
                 <h2>Histórico de Pesquisas</h2>
             </div>
-            <div class="historico" id="historico"></div>
-        </div>
+            <div class="historico" id="historico">
+            <div id="limparhis"></div>
+            </div>
     </div>
     <script src="script.js"></script>
 </body>
