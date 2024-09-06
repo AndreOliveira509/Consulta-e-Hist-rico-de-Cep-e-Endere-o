@@ -20,7 +20,7 @@ async function buscarEndereco() {
         }
 
         preencherDados(data);
-        adicionarAoHistorico(cep); // Adiciona o CEP ao histórico
+        adicionaHistorico(cep); // Corrigido
     } catch (error) {
         exibirMensagemErro(error.message);
     }
@@ -28,23 +28,12 @@ async function buscarEndereco() {
 
 // Função para buscar o CEP pelo estado, cidade e logradouro
 async function buscarCepPorEndereco() {
-    const uf = document.getElementById('uf').value.trim();
-    const cidade = document.getElementById('cidade').value.trim();
-    const logradouro = document.getElementById('logradouro').value.trim();
+    const uf = document.getElementById('uf').value.trim().toUpperCase();
+    const cidade = encodeURIComponent(document.getElementById('cidade').value.trim());
+    const logradouro = encodeURIComponent(document.getElementById('logradouro').value.trim());
 
-    // Verificar se UF, cidade e logradouro foram preenchidos corretamente
-    if (uf.length === 0) {
-        exibirMensagemErro('Por favor, selecione um estado (UF).');
-        return;
-    }
-
-    if (cidade.length === 0) {
-        exibirMensagemErro('Por favor, insira uma cidade.');
-        return;
-    }
-
-    if (logradouro.length === 0) {
-        exibirMensagemErro('Por favor, insira um logradouro.');
+    if (!uf || !cidade || !logradouro) {
+        exibirMensagemErro('Todos os campos são obrigatórios.');
         return;
     }
 
@@ -55,12 +44,12 @@ async function buscarCepPorEndereco() {
         }
 
         const data = await response.json();
-        if (data.length === 0) {
+        if (!data.length) {
             throw new Error('Endereço não encontrado');
         }
 
-        exibirCep(data[0].cep); // Exibe o primeiro CEP encontrado
-        adicionarAoHistorico(data[0].cep); // Adiciona o CEP ao histórico
+        exibirCep(data[0].cep);
+        adicionaHistorico(data[0].cep); // Corrigido
     } catch (error) {
         exibirMensagemErro(error.message);
     }
@@ -68,8 +57,8 @@ async function buscarCepPorEndereco() {
 
 // Função para exibir o CEP encontrado
 function exibirCep(cep) {
-    const resultadoDiv = document.getElementById('resultado');
-    resultadoDiv.innerText = `CEP encontrado: ${cep}`;
+    const resultadoDiv = document.getElementById('cep-encontrado');
+    resultadoDiv.value = cep;
     limparInputsEndereco();
     limparMensagemErro();
 }
@@ -99,7 +88,7 @@ function limparCampos() {
     document.getElementById('bairro-info').value = '';
     document.getElementById('cidade-info').value = '';
     document.getElementById('uf-info').value = '';
-    document.getElementById('resultado').innerHTML = '';
+    document.getElementById('cep-encontrado').value = '';
     limparMensagemErro();
 }
 
@@ -115,37 +104,34 @@ function limparMensagemErro() {
     resultadoDiv.innerHTML = '';
 }
 
-// Função para adicionar um CEP ao histórico de pesquisas
-function adicionarAoHistorico(cep) {
-    let historico = JSON.parse(localStorage.getItem('historicoCep')) || [];
-    
-    // Evita duplicatas
-    if (!historico.includes(cep)) {
-        historico.push(cep);
-        localStorage.setItem('historicoCep', JSON.stringify(historico));
-        atualizarHistorico();
+// Função para adicionar CEP ao histórico
+function adicionaHistorico(cep) {
+    let hist = JSON.parse(localStorage.getItem('historicoCep')) || [];
+    if (!hist.includes(cep)) {
+        hist.push(cep);
+        localStorage.setItem('historicoCep', JSON.stringify(hist));
+        atualizaHistorico();
     }
 }
 
-// Função para atualizar a exibição do histórico de pesquisas
-function atualizarHistorico() {
-    const historicoDiv = document.getElementById('historico');
-    let historico = JSON.parse(localStorage.getItem('historicoCep')) || [];
-    
-    historicoDiv.innerHTML = '<h2>Histórico de Pesquisas</h2>';
-    historico.forEach(cep => {
-        const button = document.createElement('button');
-        button.innerText = cep;
-        button.onclick = () => buscarEnderecoPorCep(cep);
-        historicoDiv.appendChild(button);
+// Atualiza a lista de históricos
+function atualizaHistorico() {
+    const histDiv = document.getElementById('historico');
+    let hist = JSON.parse(localStorage.getItem('historicoCep')) || [];
+    histDiv.innerHTML = '';
+    hist.forEach(cep => {
+        const btn = document.createElement('button');
+        btn.innerText = cep;
+        btn.onclick = () => buscaEnderecoPorCep(cep);
+        histDiv.appendChild(btn);
     });
+
+    // Adiciona botão para limpar histórico
+    const limparBtn = document.createElement('button');
+    limparBtn.innerText = 'Limpar Histórico';
+    limparBtn.onclick = limparHistorico;
+    histDiv.appendChild(limparBtn);
 }
 
-// Função para buscar o endereço com base no CEP do histórico
-async function buscarEnderecoPorCep(cep) {
-    document.getElementById('cep').value = cep;
-    await buscarEndereco();
-}
-
-// Inicializa o histórico quando a página carrega
-window.onload = atualizarHistorico;
+// Pesquisa endereço pelo CEP do histórico
+async

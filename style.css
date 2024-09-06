@@ -177,7 +177,6 @@ body {
 }
 #historico {
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
     align-items: center;
     height: 90%;
@@ -186,6 +185,11 @@ body {
 #resultado {
     margin-top: 20px;
 }
-.erro {
-    color: red;
+#historico button{
+    border: solid 1px;
+    width: 90px;
+    height: 50px;
+    border-radius: 12px;
+    margin: 5px;
+    
 }
