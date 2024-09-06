@@ -1,3 +1,13 @@
+// Função pro menu
+function m() {
+    const menu = document.getElementById('his-content');
+    menu.style.right = "0";
+}
+function fecharm() {
+    const menu = document.getElementById('his-content');
+    menu.style.right = "-30vw";
+}
+
 // Função para buscar o endereço pelo CEP
 function buscarEndereco() {
     const cep = document.getElementById('cep').value;
