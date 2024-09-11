@@ -7,7 +7,9 @@ function fecharm() {
     const menu = document.getElementById('his-content');
     menu.style.right = "-30vw";
 }
+
 // Função que vai buscar o endereço usando o CEP digitado
+// Função para buscar o endereço pelo CEP
 async function buscarEndereco() {
     let cep = document.getElementById('cep').value.trim(); // Pega o valor do CEP e tira os espaços em volta
 
